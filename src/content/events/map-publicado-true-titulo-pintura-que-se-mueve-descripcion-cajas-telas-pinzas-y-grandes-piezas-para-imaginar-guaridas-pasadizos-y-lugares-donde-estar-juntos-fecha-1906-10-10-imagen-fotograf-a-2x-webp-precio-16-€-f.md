@@ -1,6 +1,6 @@
 ---
 titulo: Pintura que se mueve
-fecha: 1906-10-10
+fecha: "10/10/1906"
 descripcion: Cajas, telas, pinzas y grandes piezas para imaginar guaridas,
   pasadizos y lugares donde estar juntos.
 imagen: fotograf-a-2x.webp

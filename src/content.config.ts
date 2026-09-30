@@ -6,7 +6,13 @@ const events = defineCollection({
   schema: ({ image }) =>
     z.object({
       titulo: z.string(),
-      fecha: z.coerce.date(),
+      fecha: z
+        .string()
+        .regex(/^\d{2}\/\d{2}\/\d{4}$/, 'La fecha debe tener el formato DD/MM/AAAA')
+        .transform((valor) => {
+          const [dia, mes, anio] = valor.split('/').map(Number);
+          return new Date(anio, mes - 1, dia);
+        }),
       descripcion: z.string(),
       imagen: image(),
       lugar: z.string().optional(),
