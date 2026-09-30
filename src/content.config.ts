@@ -7,12 +7,8 @@ const events = defineCollection({
     z.object({
       titulo: z.string(),
       fecha: z
-        .string()
-        .regex(/^\d{2}\/\d{2}\/\d{4}$/, 'La fecha debe tener el formato DD/MM/AAAA')
-        .transform((valor) => {
-          const [dia, mes, anio] = valor.split('/').map(Number);
-          return new Date(anio, mes - 1, dia);
-        }),
+        .object({ dia: z.number(), mes: z.number(), anio: z.number() })
+        .transform(({ dia, mes, anio }) => new Date(anio, mes - 1, dia)),
       descripcion: z.string(),
       imagen: image(),
       lugar: z.string().optional(),

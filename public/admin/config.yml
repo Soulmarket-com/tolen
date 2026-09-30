@@ -22,9 +22,11 @@ collections:
       - { label: "Título", name: "titulo", widget: "string" }
       - label: "Fecha"
         name: "fecha"
-        widget: "string"
-        hint: 'Formato DD/MM/AAAA, ej. "15/10/2026"'
-        pattern: ['^\d{2}/\d{2}/\d{4}$', 'Usa el formato DD/MM/AAAA']
+        widget: "object"
+        fields:
+          - { label: "Día", name: "dia", widget: "number", value_type: "int", min: 1, max: 31 }
+          - { label: "Mes", name: "mes", widget: "number", value_type: "int", min: 1, max: 12 }
+          - { label: "Año", name: "anio", widget: "number", value_type: "int", min: 2024, max: 2100 }
       - { label: "Descripción", name: "descripcion", widget: "text" }
       - { label: "Imagen", name: "imagen", widget: "image", media_folder: "", public_folder: "" }
       - { label: "Lugar", name: "lugar", widget: "string", required: false }
