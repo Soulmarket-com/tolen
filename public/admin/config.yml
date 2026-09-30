@@ -35,4 +35,15 @@ collections:
         widget: "string"
         required: false
         hint: 'Ej. "Gratuito" o "10€"'
+      - label: "Aforo"
+        name: "aforo"
+        widget: "number"
+        value_type: "int"
+        required: false
+        hint: "Número máximo de plazas (déjalo vacío si no aplica)"
+      - label: "Rango de edad"
+        name: "rango_edad"
+        widget: "string"
+        required: false
+        hint: 'Ej. "3-6 años" o "Todos los públicos"'
       - { label: "Publicado", name: "publicado", widget: "boolean", default: true }

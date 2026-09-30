@@ -36,7 +36,11 @@ const eventos = (await getCollection('events'))
                   })}
                   {evento.data.lugar && ` · ${evento.data.lugar}`}
                 </p>
-                {evento.data.precio && <span class="badge badge-outline w-fit">{evento.data.precio}</span>}
+                <div class="flex flex-wrap gap-2">
+                  {evento.data.precio && <span class="badge badge-outline">{evento.data.precio}</span>}
+                  {evento.data.rango_edad && <span class="badge badge-outline">{evento.data.rango_edad}</span>}
+                  {evento.data.aforo && <span class="badge badge-outline">Aforo: {evento.data.aforo}</span>}
+                </div>
                 <p>{evento.data.descripcion}</p>
                 <div class="card-actions justify-end mt-2">
                   <a

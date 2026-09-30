@@ -13,6 +13,8 @@ const events = defineCollection({
       imagen: image(),
       lugar: z.string().optional(),
       precio: z.string().optional(),
+      aforo: z.number().optional(),
+      rango_edad: z.string().optional(),
       publicado: z.boolean().default(true),
     }),
 });
