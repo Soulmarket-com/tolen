@@ -1,0 +1,32 @@
+backend:
+  name: github
+  # TODO: sustituir por el repo real, formato "usuario-o-org/nombre-repo"
+  repo: TODO/TODO
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+publish_mode: simple
+media_folder: ""
+public_folder: ""
+
+collections:
+  - name: "events"
+    label: "Eventos"
+    folder: "src/content/events"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    summary: "{{titulo}} — {{fields.publicado}}"
+    fields:
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { label: "Fecha", name: "fecha", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Descripción", name: "descripcion", widget: "text" }
+      - { label: "Imagen", name: "imagen", widget: "image", media_folder: "", public_folder: "" }
+      - { label: "Lugar", name: "lugar", widget: "string", required: false }
+      - label: "Precio"
+        name: "precio"
+        widget: "string"
+        required: false
+        hint: 'Ej. "Gratuito" o "10€"'
+      - { label: "Publicado", name: "publicado", widget: "boolean", default: true }
