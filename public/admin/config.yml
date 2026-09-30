@@ -1,7 +1,6 @@
 backend:
   name: github
-  # TODO: sustituir por el repo real, formato "usuario-o-org/nombre-repo"
-  repo: TODO/TODO
+  repo: Soulmarket-com/tolen
   branch: main
   base_url: https://api.netlify.com
   auth_endpoint: auth
